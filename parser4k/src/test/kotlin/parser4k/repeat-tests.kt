@@ -33,6 +33,6 @@ class RepeatTests {
 
         optional(str("a")).parse(Input("")) shouldEqual Output(null, Input(""))
         optional(str("a")).parse(Input("a")) shouldEqual Output("a", Input("a", offset = 1))
-        optional(str("a")).parse(Input("aa")) shouldEqual Output("a", Input("aa", offset = 1))
+        str("a").optional().parse(Input("aa")) shouldEqual Output("a", Input("aa", offset = 1))
     }
 }
